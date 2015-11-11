@@ -1,0 +1,59 @@
+<ion-view view-title="{{ 'settings' | translate}}">
+  <ion-content>
+    <ion-list>
+<div class="card">
+    <!-- Theme -->
+  <div class="item item-divider item-icon-left">
+   <i class="icon ion-android-options"></i>
+    Choose your Theme 
+  </div>
+  <div class="item item-text-wrap">
+    <ion-toggle ng-model="settings.dark" ng-click="dark()">
+        {{ 'dark' | translate}} 
+    </ion-toggle>
+    <ion-toggle ng-model="settings.light" ng-click="light()">
+        {{ 'light' | translate}}
+    </ion-toggle>
+    <ion-toggle ng-model="settings.stable" ng-click="stable()">
+        {{ 'stable' | translate}}
+    </ion-toggle>
+    <ion-toggle ng-model="settings.positive" ng-click="positive()">
+        {{ 'positive' | translate}} 
+    </ion-toggle>
+    <br>
+     <pre>{{settings|json}}</pre>      
+     <pre>{{theme.data|json}}</pre>      
+  </div>
+    <!-- /Theme-->
+    <!-- Select Language -->
+ <div class="item item-divider item-icon-left">
+   <i class="icon ion-android-globe"></i>
+    Choose your Language
+  </div>
+    <div class="item item-text-wrap">
+    <ion-list>
+    <ion-toggle ng-model="langToggle.DE" ng-click="langToggle.DE = !false; langToggle.EN = false; langToggle.FR = false; langToggle.IT = false">
+      <div class="flag"></div> Deutsch
+    </ion-toggle>
+    <ion-toggle  ng-model="langToggle.EN" ng-click="langToggle.EN = !false; langToggle.DE = false; langToggle.FR = false; langToggle.IT = false">
+      <div class="flag"></div> English
+    </ion-toggle>
+    <ion-toggle  ng-model="langToggle.FR" ng-click="langToggle.FR= !false; langToggle.DE = false; langToggle.EN = false; langToggle.IT = false">
+      <div class="flag"></div> Francis
+    </ion-toggle>
+    <ion-toggle  ng-model="langToggle.IT" ng-click="langToggle.IT = !false; langToggle.DE = false; langToggle.FR = false; langToggle.EN = false">
+      <div class="flag"></div> Italiano
+    </ion-toggle>
+    <br>
+    <pre>{{langToggle|json}}</pre>
+  </ion-list>
+    </div>
+    <!-- /Language -->
+    <!-- Footer -->
+  <div class="item item-divider">
+  </div>
+    <!-- Footer-->
+</div>
+    </ion-list>
+  </ion-content>
+</ion-view>
